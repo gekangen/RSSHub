@@ -425,6 +425,9 @@
   "/omegascans/series/:id": [
     "ereneroglum"
   ],
+  "/onlyheaven/:service?/:id?/:type?": [
+    "gekangen"
+  ],
   "/polymarket/event/:slug": [
     "heqi201255"
   ],

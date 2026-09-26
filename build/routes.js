@@ -6196,6 +6196,62 @@ export default {
     "url": "omegascans.org",
     "description": "::: tip\nOmega Scans is a localization team working tirelessly to provide readers with high-quality Comics and Novels to read.\n:::"
   },
+  "onlyheaven": {
+    "routes": {
+      "/:service?/:id?/:type?": {
+        "path": "/:service?/:id?/:type?",
+        "categories": [
+          "multimedia"
+        ],
+        "example": "/onlyheaven/posts",
+        "parameters": {
+          "service": "Platform (`onlyfans`, `fansly`, or `patreon`), or `posts` / `dms` for the latest posts / DMs across all creators (defaults to `posts`)",
+          "id": "Creator ID from the creator URL; required when a platform is specified",
+          "type": "Use `dms` for the creator’s DMs; defaults to posts"
+        },
+        "features": {
+          "nsfw": true
+        },
+        "radar": [
+          {
+            "source": [
+              "cum.st/posts"
+            ],
+            "target": "/posts"
+          },
+          {
+            "source": [
+              "cum.st/dms"
+            ],
+            "target": "/dms"
+          },
+          {
+            "source": [
+              "cum.st/creators/:service/:id"
+            ],
+            "target": "/:service/:id"
+          },
+          {
+            "source": [
+              "cum.st/creators/:service/:id/dms"
+            ],
+            "target": "/:service/:id/dms"
+          }
+        ],
+        "name": "Posts and DMs",
+        "maintainers": [
+          "gekangen"
+        ],
+        "description": "Sources\n\n| Latest posts | Latest DMs | OnlyFans creator | Fansly creator | Patreon creator |\n| ------------ | ---------- | ---------------- | -------------- | --------------- |\n| posts        | dms        | onlyfans         | fansly         | patreon         |\n\n::: tip\nWhen **service** is `posts` or `dms`, **id** is not used. For a creator, use `/onlyheaven/onlyfans/CREATOR_ID` for posts or `/onlyheaven/onlyfans/CREATOR_ID/dms` for DMs. Replace `onlyfans` with `fansly` or `patreon` for other creators. Available images are included in the feed entries.\n:::",
+        "location": "index.ts",
+        "module": () => import('@/routes/onlyheaven/index.ts')
+      }
+    },
+    "apiRoutes": {},
+    "name": "OnlyHeaven",
+    "url": "cum.st",
+    "lang": "en"
+  },
   "polymarket": {
     "routes": {
       "/event/:slug": {

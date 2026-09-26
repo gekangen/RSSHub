@@ -2557,6 +2557,7 @@ export type RoutePath =
   | `/onenotegem/release`
   | `/onet/news`
   | `/onlyfans/:username`
+  | `/onlyheaven/:service?/:id?/:type?`
   | `/oo-software/changelog/:id`
   | `/openai/chatgpt-atlas/release-notes`
   | `/openai/chatgpt/release-notes`
